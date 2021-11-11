@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Wined</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+<body class = "bg-secondary text-light">
+
+    <nav class="navbar navbar-dark bg-dark navbar-expand-lg mr-auto">
+        <a href="/wines" class="nav-link navbar-brand ms-5">Wined</a>
+    </nav>
+
+    <div class = "container py-5">
+        <div class = "row">
+            <div class = "col-lg-6 col-md-6 col-sm-6 container justify-content-center card bg-dark text-light">
+                <h1 class = "text-center">Create New Wine</h1>
+                <div class = "card-body">
+                    <form th:action="@{/wines}" th:object = "${wine}" method="POST">
+
+                        <div class ="form-group">
+                            <label>Wine Name</label>
+                            <input
+                            type = "text"
+                            name = "name"
+                            th:field = "*{name}"
+                            class = "form-control"
+                            placeholder="Enter Wine Name"
+                            required="required"
+                            />
+                        </div>
+
+                        <div class ="form-group">
+                            <label>Wine Color</label>
+                            <input
+                                    type = "text"
+                                    name = "color"
+                                    th:field = "*{color}"
+                                    class = "form-control"
+                                    placeholder="Enter Wine Color"
+                                    required="required"
+                            />
+                        </div>
+
+                        <div class ="form-group">
+                            <label>Wine Vintage</label>
+                            <input
+                                    type = "number"
+                                    name = "vintage"
+                                    th:field = "*{vintage}"
+                                    class = "form-control"
+                                    placeholder="Enter Wine Vintage"
+                                    required="required"
+                            />
+                        </div>
+
+                        <div class ="form-group">
+                            <label>Country</label>
+                            <input
+                                    type = "text"
+                                    name = "country"
+                                    th:field = "*{country}"
+                                    class = "form-control"
+                                    placeholder="Enter Country"
+                                    required="required"
+                            />
+                        </div>
+
+                        <div class ="form-group">
+                            <label>Strain</label>
+                            <input
+                                    type = "text"
+                                    name = "strain"
+                                    th:field = "*{strain}"
+                                    class = "form-control"
+                                    placeholder="Enter Strain"
+                                    required="required"
+                            />
+                        </div>
+
+                        <div class ="form-group">
+                            <label>Rating</label>
+                            <input
+                                    type = "number"
+                                    name = "rating"
+                                    th:field = "*{rating}"
+                                    class = "form-control"
+                                    placeholder="Enter Rating"
+                                    required="required"
+                            />
+                        </div>
+
+                        <div class ="box-footer text-center btn-lg">
+                            <button type = "submit" class = "btn btn-secondary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
